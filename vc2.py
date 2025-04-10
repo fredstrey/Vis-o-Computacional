@@ -86,7 +86,7 @@ while True:
         # Verifica se o objeto já está rastreado
         for obj_id, data in tracked_objects.items():
             distance = euclidean(data['centroid'], centroid)
-            # Se o objeto está se movendo para baixo, a classe é amesma e a distância é pequena, é mapeado como o mesmo objeto
+            # Se a classe é amesma e a distância é pequena e o objeto se desloca pra baixo, é mapeado como o mesmo objeto
             if (data['class'] == class_name and distance < 50 and 
                 (centroid[1] > data['centroid'][1] or distance < 30)): 
                 if distance < min_distance:
